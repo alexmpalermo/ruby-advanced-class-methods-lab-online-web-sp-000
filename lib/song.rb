@@ -46,7 +46,16 @@ end
 
 def self.new_from_filename(filename)
   song = self.new
+  data = filename.split(" - ")
+  @artist_name = data[0]
+  @name = data[1]
   
+  person = Person.new
+  person.name = name
+  person.age = age
+  person.company = company
+  person
+end
 end
 
 def self.create_from_filename(filename)
