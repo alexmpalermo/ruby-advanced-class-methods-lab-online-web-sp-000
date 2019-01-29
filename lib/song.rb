@@ -48,7 +48,7 @@ def self.new_from_filename(filename)
   song = self.new
   data = filename.split(" - ")
   @artist_name = data[0]
-  @name = data[1]
+  @name = data[1].slice!
   
   person = Person.new
   person.name = name
