@@ -45,16 +45,15 @@ def self.alphabetical
 end
 
 def self.new_from_filename(filename)
-  song = self.new
+  
   data = filename.split(" - ")
   @artist_name = data[0]
-  @name = data[1].slice!
+  @name = data[1].slice! ".mp3"
   
-  person = Person.new
-  person.name = name
-  person.age = age
-  person.company = company
-  person
+  song = self.new
+  song.name = name
+  song.artist_name = artist_name
+  song
 end
 end
 
